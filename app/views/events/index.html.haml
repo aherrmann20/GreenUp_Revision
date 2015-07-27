@@ -11,6 +11,8 @@
 
         %li= select_tag(:option, options_for_select(Event.all.pluck(:name).select), selected: :option)
 
+  
+
     %ul
       - if false
         %h2 hello
