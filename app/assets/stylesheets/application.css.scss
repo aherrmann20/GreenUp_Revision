@@ -1,0 +1,167 @@
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*Color*/
+.green{color:#96D437;}
+
+.white{color:white;}
+
+.black{color:black;}
+
+.grey{color:#323533;}
+
+.lightgrey{color:#C9CCCB;}
+
+
+/*all text*/
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+/*white overlay on all pages*/
+#container {
+	text-align: center;
+	margin: 8%;
+	padding: 35px;
+	background-color: white;
+	opacity: .90;
+}
+
+h1 {
+	font-family: 'Arvo', serif;
+	font-size: 40px;
+	margin: 0;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+#money-amount {
+	font-size: 50px;
+  font-color:#96D437;
+}
+
+#money-message {
+  margin: 20px;
+  font-size: 22px;
+  font-color:white;
+}
+
+input {
+	font-weight: 500;
+	font-size: 35px;
+	padding-left: 15px;
+	outline: none;
+	background: #fff;
+}
+
+input[type=number] {
+	width: 90px;
+}
+
+textarea {
+  padding: 5px;
+}
+
+.button {
+	font-family: 'Arvo', serif;
+	font-size: 25px;
+	cursor: pointer;
+	border: thin solid black;
+	text-decoration:none;
+  border-radius: 8px;
+  padding: 20px;
+	margin: 10px;
+  color: black;
+  background-color: yellow;
+
+  &:active {
+    position:relative;
+    top:1px;
+  }
+
+  &:focus {
+    outline: none;  
+  }
+
+  &:hover {
+    background-color: #eee;
+    transition: 0.3;
+  }
+}
+
+.bg-img {
+  position: fixed; left: 0; top: 0;
+  min-width: 100%; min-height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: auto; height: auto; z-index: -100;
+}
+
+.notice {
+  background-color: #c6f3c5;
+  color: green;
+  border: thin solid green;
+  padding: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.small {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.tip {
+  float: right;
+  background-color: white;
+  height: 60px;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.train .tip {
+  width: 300px;
+}
+
+.bus .tip {
+  width: 400px;
+}
+
+.car .tip {
+  width: 200px;
+}
+
+
+
+
+

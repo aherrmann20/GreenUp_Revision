@@ -1,0 +1,48 @@
+= image_tag "home.jpg", class: "bg-img"
+#indexcontainer
+  
+  #green-wrapper
+    %h1.white Hi there!
+    %p.white WELCOME TO THIS FUN 5-MINUTE CALCULATOR
+    %p.white THE AIM IS TO INSPIRE US ALL TO LIVE A LITTLE GREENER 
+    %ul
+      = form_tag(events_path, method: 'get') do
+        %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
+
+        %li= select_tag(:option, options_for_select(Event.all.pluck(:name).select), selected: :option)
+
+    %ul
+      - if false
+        %h2 hello
+
+
+    %ul
+      - if @events.try(:any?)
+        %h2.start  &nbsp; Get Started &#8594; &nbsp;
+        &nbsp;
+        / %h3 Search Results
+        - @events.each do |event| 
+          %span.start
+            = link_to(event.name, new_event_user_path(event))
+          
+      - elsif params[:event_search]
+        %h3 No Events Found
+  
+  #caption-wrapper
+    %h1.grey.outline CARBON
+    %h2.white CALCULATOR
+  = image_tag "reliance.png", class: "banner", align: "right"
+  = image_tag "greenpop.png", class: "banner banner1", align: "right"
+
+  = image_tag "couch1.png", class: "logo", align: "left"
+  = image_tag "car1.png", class: "logo", align: "left"
+  = image_tag "rails.png", class: "logo", align: "left"
+  = image_tag "plane1.png", class: "logo2", align: "left"
+  = image_tag "tree1.png", class: "logo2", align: "left"
+ 
+  #grey-wrapper
+
+
+
+
+

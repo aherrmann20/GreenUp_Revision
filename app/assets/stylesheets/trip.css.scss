@@ -1,0 +1,43 @@
+/*NEW*/
+.notice {
+	font-family: 'Arvo', serif;
+	font-size: 40px;
+}
+
+.transport_button {
+	background-color:#44c767;
+	border:1px solid #18ab29;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+	border-radius: 3px;
+}
+.transport_button:hover {
+	background-color:#369F52;
+}
+.transport_button.active {
+	background-color:#205F31;
+}
+.transport_button:focus {
+	outline: none;
+}
+
+.transport {
+	text-align: left;
+	background: #44c767;
+	margin: 20px 20px 0;
+	padding: 10px 15px;
+	overflow: auto;
+	border-radius: 3px;
+
+	ul {
+		display: inline-block;
+		float: left;
+		margin: 0;
+		padding-right: 20px;
+	}
+}

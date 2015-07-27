@@ -1,0 +1,16 @@
+= image_tag @event.background.url, class: "bg-img"
+.container
+	#container.grey
+		#money-message.white
+			According to our calculations, you could GreenUp the 
+			= @trip.carbon
+			kg of carbon emitted during your travels by contributing
+			#money-amount= Price.new(@money_amount).to_s
+			towards green projects.
+	
+		.row
+			.col-md-2
+			.col-md-4
+				=link_to("Contribute towards planting a tree", new_event_tree_path(@event, amount: @money_amount), class: "button small")
+			.col-md-4
+				=link_to("Make your own green pledge", new_event_pledge_path(@event), class: "button small")
