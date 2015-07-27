@@ -1,4 +1,4 @@
-= image_tag @event.background.url, class: "bg-img"
+= render 'events/background'
 #container.grey
   - if flash[:notice]
     .notice= flash[:notice]
