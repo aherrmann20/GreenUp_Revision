@@ -65,10 +65,11 @@ ul {
 
 #money-amount {
 	font-size: 50px;
-  font-color:#96D437;
+  color: #8AE62E;
 }
 
 #money-message {
+  color:white;
   margin: 20px;
   font-size: 22px;
   font-color:white;
@@ -127,7 +128,7 @@ textarea {
   padding: 20px;
 	margin: 10px;
   color: black;
-  background-color: yellow;
+  background-color: #c76744;
 
   &:active {
     position:relative;

@@ -20,12 +20,9 @@
 
     %ul
       - if @events.try(:any?)
-        %h2.start  &nbsp; Get Started &#8594; &nbsp;
-        &nbsp;
-        / %h3 Search Results
         - @events.each do |event| 
-          %span.start
-            = link_to(event.name, new_event_user_path(event))
+          %h2.start
+            = link_to("Get Started \u2192", new_event_user_path(event), :class => "glyphicon glyphicon-chevron-right")
           
       - elsif params[:event_search]
         %h3 No Events Found

@@ -178,14 +178,25 @@ h2.start{
   color: #fff;
   background-color: #003300;
   border-radius: 0.3em;
-  padding: 0.1em;
+  padding: 0.2em;
   margin-top: 1em;
-}
-
-span.start{
   text-align: right;
-  font-size: 1.4em;
   font-weight: 800;
   z-index: 99;
+}
+
+/* unvisited link */
+a:link {
+    color: #FFF;
+}
+
+/* visited link */
+a:visited {
+    color: #FFF;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FFF;
 }
 
