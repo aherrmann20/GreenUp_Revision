@@ -1,11 +1,15 @@
 function checkInput(){
   var name = $("#user_name").val();
+  var surname = $("#user_surname").val();
   var email = $("#user_email").val();
   
   // Verify name field isn't blank
   if(name == null || name == "") {
-    $("#email_input_response").html();
+    $("#email_input_response").html('Please tell us your name');
   }// Verify email valid
+  else if(surname == null || surname == "") {
+    $("#email_input_response").html('Please tell us your surname.');
+  }
   else if(!validateEmail(email)) {
     $("#email_input_response").html('Please enter your valid email address.');
   } // Old User

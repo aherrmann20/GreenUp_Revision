@@ -20,20 +20,24 @@
 			%ul.question
 				%li= label_tag(:car_id, "Car Type:")
 				%li= select_tag(:car_id, options_for_select(Car.select), prompt: "Select a size")
+			= image_tag "car1.png", class: "logo_trips", align: "right"
 		.transport.bus
 			.tip You're awesome!  "A devel­oped coun­try is not a place where the poor have cars, but where the rich use pub­lic trans­port" ~ for­mer Mayor of Bogotá, Colombia.
 			%ul.question
 				%li= label_tag(:bus_km, "Kilometers travelled by bus: ")
 				%li= number_field_tag(:bus_km, step: 0.5)
+			= image_tag "couch1.png", class: "logo_trips", align: "right"
 		.transport.train
 			.tip Good work! Train emissions of CO2 per passenger/km are, on average, about half of travel by car.
 			%ul.question
 				%li= label_tag(:train_km, "Kilometers travelled by train: ")
 				%li= number_field_tag(:train_km, step: 0.5)
+			= image_tag "rails.png", class: "logo_trips", align: "right"
 		.transport.plane
 			.tip This is a tip!
 			%ul.question
 				%li= select_tag(:flight_id, options_for_select(Flight.select), prompt: "Origin of Flight")
+			= image_tag "plane1.png", class: "logo_trips", align: "right" 
 		%div
 			= submit_tag("Go", class: "btn btn-link")
 
