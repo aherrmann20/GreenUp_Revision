@@ -155,10 +155,12 @@ body {
 }
 
 h1.white{
+  text-shadow: 2px 2px 4px #000000;
   font-size:48px
 }
 
 p.white{
+  font-family: "Rockwell";
   padding:0;
 }
 
@@ -173,8 +175,8 @@ input#event_search{
 h2.start{
   position: relative;
   display: inline;
-  color: black;
-  background-color: yellow;
+  color: #fff;
+  background-color: #003300;
   border-radius: 0.3em;
   padding: 0.1em;
   margin-top: 1em;

@@ -30,7 +30,7 @@
 
 /*all text*/
 * {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Helvetica Neue Light', sans-serif;
 }
 
 /*white overlay on all pages*/
@@ -43,7 +43,7 @@
 }
 
 h1 {
-	font-family: 'Arvo', serif;
+	font-family: 'Rockwell', serif;
 	font-size: 40px;
 	margin: 0;
 }
@@ -91,7 +91,7 @@ textarea {
 }
 
 .btn-link {
-  font-family: 'Arvo', serif;
+  font-family: "Rockwell", serif;
   font-size: 25px;
   cursor: pointer;
   border: thin solid black;
@@ -118,7 +118,7 @@ textarea {
 }
 
 .button {
-	font-family: 'Arvo', serif;
+	font-family: 'Rockwell', serif;
 	font-size: 25px;
 	cursor: pointer;
 	border: thin solid black;
@@ -192,7 +192,26 @@ textarea {
   width: 400px;
 }
 
+#option {
+  width: 240px;
+  height: 34px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
 
-
+.dropdown {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background: #fff;
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  width: 50%;
+  z-index: 100;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 
