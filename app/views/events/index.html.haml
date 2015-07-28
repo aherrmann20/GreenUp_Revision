@@ -5,16 +5,16 @@
     %h1.white Hi there!
     %p.white WELCOME TO THIS FUN 5-MINUTE CALCULATOR
     %p.white THE AIM IS TO INSPIRE US ALL TO LIVE A LITTLE GREENER 
+
     %ul
       = form_tag(events_path, method: 'get') do
-        %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
+        %li= select_tag(:option, options_for_select(Event.all.pluck(:name)), selected: :option, class: "dropdown")
 
-        %li= select_tag(:option, options_for_select(Event.all.pluck(:name).select), selected: :option)
+        %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
 
     %ul
       - if false
         %h2 hello
-
 
     %ul
       - if @events.try(:any?)
