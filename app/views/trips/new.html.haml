@@ -1,4 +1,4 @@
-= image_tag @event.background.url, class: "bg-img"
+= render 'events/background'
 #container.grey
 	%h1.white Hello #{@user.name}, the Treemendous Traveller! 
 	%h2.white Please describe your journey to #{@event.name}
@@ -35,5 +35,5 @@
 			%ul.question
 				%li= select_tag(:flight_id, options_for_select(Flight.select), prompt: "Origin of Flight")
 		%div
-			= submit_tag("Go", class: "button")
+			= submit_tag("Go", class: "btn btn-link")
 
