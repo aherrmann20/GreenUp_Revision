@@ -21,7 +21,9 @@ $(function() {
   $(".car_b").click(function(){ $(".car").slideToggle(); $(this).toggleClass('active'); });
   $(".bus_b").click(function(){ $(".bus").slideToggle(); $(this).toggleClass('active'); });
   $(".train_b").click(function(){ $(".train").slideToggle(); $(this).toggleClass('active'); });
-  $(".plane_b").click(function(){ $(".plane").slideToggle(); $(this).toggleClass('active'); });
+  $(".plane_b").click(function(){ 
+    $(".plane").slideToggle(); $(this).toggleClass('active'); 
+  });
 
   $( "#car_people" ).keyup(function() {
     $('.car .tip').html(carMessage($(this).val()));    
@@ -34,6 +36,10 @@ $(function() {
 
   $( "#train_km" ).keyup(function() {
     $('.train .tip').fadeIn('slow');
+  });
+
+  $( "#flight_id" ).change(function() {
+    $('.plane .tip').fadeIn('slow');
   });
 
 });

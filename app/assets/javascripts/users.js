@@ -25,5 +25,6 @@ function validateEmail(email) {
 
 $(document).ready(function() {
   $("#user_name").bind("keyup paste click", checkInput);
+  $("#user_surname").bind("keyup paste click", checkInput);
   $("#user_email").bind("keyup paste click", checkInput);
 });

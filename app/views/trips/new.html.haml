@@ -34,7 +34,7 @@
 				%li= number_field_tag(:train_km, step: 0.5)
 			= image_tag "rails.png", class: "logo_trips", align: "right"
 		.transport.plane
-			.tip This is a tip!
+			.tip Did you know? Engineers are currently working on environmentally-friendly biofuels to use in place of kerosene for aviation!
 			%ul.question
 				%li= select_tag(:flight_id, options_for_select(Flight.select), prompt: "Origin of Flight")
 			= image_tag "plane1.png", class: "logo_trips", align: "right" 
