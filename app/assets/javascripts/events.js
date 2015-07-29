@@ -10,5 +10,7 @@
 // });
 
 $( document ).ready(function() {
-	$('#event_name').change(function() { alert($(this).find(":selected").text()); });
+	$('#event_name').change(function() { 
+		this.form.submit();
+	});
 });

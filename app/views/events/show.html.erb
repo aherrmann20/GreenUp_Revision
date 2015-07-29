@@ -1,0 +1,21 @@
+<%= render 'events/background' %>
+<div class="grey" id="container">
+  <% if flash[:notice] %>
+    <div class="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <h1 class="green">
+    <%= @event.name %>
+  </h1>
+  <ul class="white">
+    <li>#{@total_trips} people have completed this survey</li>
+    <li>#{@total_carbon} kg of carbon were emitted travelling here</li>
+    <li>#{@total_km} km have been travelled</li>
+    <li>
+      <%= pluralize(@total_pledge, "pledge") + " " + (@total_pledge == 1 ? "has" : "have") + " been made" %>
+    </li>
+  </ul>
+  <br/>
+  <%= link_to("Calculate again", new_event_user_path(@event), class: "button") %>
+</div>
