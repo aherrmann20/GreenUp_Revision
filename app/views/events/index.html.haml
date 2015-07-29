@@ -8,7 +8,8 @@
 
     %ul
       = form_tag(events_path, method: 'get') do
-        %li= select_tag(:option, options_for_select(Event.all.pluck(:name)), selected: :option, class: "dropdown")
+        = collection_select(:event, :name, Event.all, :id, :name, {:prompt => "Select an Event", :multiple => true }, {:class => "dropdown"})
+        / %li= select_tag(:option, options_for_select(Event.all.pluck(:name)),  selected: :option, :prompt => "Select an Event", class: "dropdown")
 
         %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
 
@@ -25,6 +26,9 @@
     /     - @events.each do |event| 
     /       = link_to("Get Started \u2192", new_event_user_path(event), :class => "glyphicon glyphicon-chevron-right")
 
+    = link_to("Get Started \u27A2", new_event_user_path(event))
+
+    
     %ul
       - if @events.try(:any?)
         - @events.each do |event| 

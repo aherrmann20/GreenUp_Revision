@@ -1,10 +1,14 @@
-$(function(){
-	$(".begin").hide();
-});
+// $(function(){
+// 	$(".begin").hide();
+// });
 
-$(function() {
-	$(".dropdown").change(function(){
-		$(".begin").show();
-		// $(".logo").hide();
-	});
+// $(function() {
+// 	$(".dropdown").change(function(){
+// 		$(".begin").show();
+// 		// $(".logo").hide();
+// 	});
+// });
+
+$( document ).ready(function() {
+	$('#event_name').change(function() { alert($(this).find(":selected").text()); });
 });
