@@ -41830,3 +41830,775 @@ Processing by EventsController#index as HTML
   [1m[35m (0.4ms)[0m  SELECT "events"."name" FROM "events"
   Rendered events/index.html.haml within layouts/application (12.1ms)
 Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events?utf8=%E2%9C%93&option=squirrel&event_search=squirrel" for 127.0.0.1 at 2015-07-28 16:48:58 +0200
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "option"=>"squirrel", "event_search"=>"squirrel"}
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE (name iLIKE '%squirrel%')  ORDER BY "events"."id" DESC LIMIT 10[0m
+  [1m[35m (0.3ms)[0m  SELECT "events"."name" FROM "events"
+  Rendered events/index.html.haml within layouts/application (12.5ms)
+Completed 200 OK in 49ms (Views: 45.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-28 16:49:13 +0200
+Processing by EventsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT "events"."name" FROM "events"[0m
+  Rendered events/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?utf8=%E2%9C%93&option=HELLO&event_search=hello" for 127.0.0.1 at 2015-07-28 16:49:44 +0200
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "option"=>"HELLO", "event_search"=>"hello"}
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events"  WHERE (name iLIKE '%hello%')  ORDER BY "events"."id" DESC LIMIT 10
+  [1m[36m (0.3ms)[0m  [1mSELECT "events"."name" FROM "events"[0m
+  Rendered events/index.html.haml within layouts/application (3.6ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/1/users/new" for 127.0.0.1 at 2015-07-28 16:49:56 +0200
+Processing by UsersController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/_background.html.haml (1.1ms)
+  Rendered users/new.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/1/users/new" for 127.0.0.1 at 2015-07-28 16:50:24 +0200
+Processing by UsersController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered events/_background.html.haml (0.8ms)
+  Rendered users/new.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events?utf8=%E2%9C%93&option=HELLO&event_search=squirrel" for 127.0.0.1 at 2015-07-28 16:50:32 +0200
+Processing by EventsController#index as HTML
+  Parameters: {"utf8"=>"✓", "option"=>"HELLO", "event_search"=>"squirrel"}
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events"  WHERE (name iLIKE '%squirrel%')  ORDER BY "events"."id" DESC LIMIT 10
+  [1m[36m (0.3ms)[0m  [1mSELECT "events"."name" FROM "events"[0m
+  Rendered events/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/2/users/new" for 127.0.0.1 at 2015-07-28 16:50:33 +0200
+Processing by UsersController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered events/_background.html.haml (1.1ms)
+  Rendered users/new.html.haml within layouts/application (6.0ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/2/users" for 127.0.0.1 at 2015-07-28 16:50:49 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "user"=>{"name"=>"j", "surname"=>"o", "email"=>"jo@me.com"}, "commit"=>"Get Started ➢", "event_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jo@me.com' LIMIT 1[0m
+Redirected to http://localhost:3000/events/2/trips/new
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/events/2/trips/new" for 127.0.0.1 at 2015-07-28 16:50:49 +0200
+Processing by TripsController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered events/_background.html.haml (0.9ms)
+  [1m[35mCar Load (0.4ms)[0m  SELECT "cars".* FROM "cars"
+  [1m[36mFlight Load (0.3ms)[0m  [1mSELECT "flights".* FROM "flights"[0m
+  Rendered trips/new.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/events/2/trips" for 127.0.0.1 at 2015-07-28 16:51:23 +0200
+Processing by TripsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "car_km"=>"40", "car_people"=>"4", "car_id"=>"2", "bus_km"=>"60", "train_km"=>"45", "flight_id"=>"5", "commit"=>"Go", "event_id"=>"2"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (9.2ms)[0m  [1mINSERT INTO "trips" ("created_at", "event_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-07-28 14:51:23.044209"], ["event_id", 2], ["updated_at", "2015-07-28 14:51:23.044209"], ["user_id", 2]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mFlight Load (0.5ms)[0m  [1mSELECT  "flights".* FROM "flights"  WHERE "flights"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "trips" SET "flight_carbon" = $1, "updated_at" = $2 WHERE "trips"."id" = 31[0m  [["flight_carbon", 2486], ["updated_at", "2015-07-28 14:51:23.058180"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mCar Load (0.3ms)[0m  [1mSELECT  "cars".* FROM "cars"  WHERE "cars"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "trips" SET "car_carbon" = $1, "updated_at" = $2 WHERE "trips"."id" = 31[0m  [["car_carbon", 5], ["updated_at", "2015-07-28 14:51:23.062217"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mVariable Load (0.4ms)[0m  [1mSELECT  "variables".* FROM "variables"  WHERE "variables"."name" = 'bus_carbon_per_km' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "trips" SET "bus_carbon" = $1, "updated_at" = $2 WHERE "trips"."id" = 31[0m  [["bus_carbon", 6], ["updated_at", "2015-07-28 14:51:23.065441"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mVariable Load (0.4ms)[0m  [1mSELECT  "variables".* FROM "variables"  WHERE "variables"."name" = 'bus_carbon_per_km' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "trips" SET "train_carbon" = $1, "updated_at" = $2 WHERE "trips"."id" = 31[0m  [["train_carbon", 4], ["updated_at", "2015-07-28 14:51:23.068606"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "trips" SET "carbon" = $1, "km_travelled" = $2, "updated_at" = $3 WHERE "trips"."id" = 31  [["carbon", 2502], ["km_travelled", 11145], ["updated_at", "2015-07-28 14:51:23.070735"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered events/_background.html.haml (0.8ms)
+  Rendered trips/create.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 60ms (Views: 27.3ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/events/2/pledges/new" for 127.0.0.1 at 2015-07-28 16:51:35 +0200
+Processing by PledgesController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered events/_background.html.haml (0.8ms)
+  Rendered pledges/new.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events/2/pledges" for 127.0.0.1 at 2015-07-28 16:51:47 +0200
+Processing by PledgesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "pledge"=>{"about"=>"I will walk to work from now on."}, "commit"=>"I commit!", "event_id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pledges" ("about", "created_at", "event_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["about", "I will walk to work from now on."], ["created_at", "2015-07-28 14:51:47.215341"], ["event_id", 2], ["updated_at", "2015-07-28 14:51:47.215341"], ["user_id", 2]]
+  [1m[35m (8.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 13ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2015-07-28 16:51:47 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "trips"  WHERE "trips"."event_id" = $1  [["event_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "trips"."carbon" FROM "trips"  WHERE "trips"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT "trips"."km_travelled" FROM "trips"  WHERE "trips"."event_id" = $1  [["event_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "pledges"  WHERE "pledges"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered events/_background.html.haml (1.5ms)
+  Rendered events/show.html.haml within layouts/application (8.2ms)
+Completed 200 OK in 34ms (Views: 29.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/2/trees/new?amount=300" for 127.0.0.1 at 2015-07-28 16:52:09 +0200
+Processing by TreesController#new as HTML
+  Parameters: {"amount"=>"300", "event_id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered events/_background.html.haml (1.2ms)
+  Rendered trees/new.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/2/trees" for 127.0.0.1 at 2015-07-28 16:52:19 +0200
+Processing by TreesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "tree"=>{"rand_given"=>"290"}, "commit"=>"Join the Treevolution now!", "event_id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "trees" ("created_at", "event_id", "rand_given", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2015-07-28 14:52:19.324335"], ["event_id", 2], ["rand_given", 290], ["updated_at", "2015-07-28 14:52:19.324335"], ["user_id", 2]]
+  [1m[35m (7.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 13ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2015-07-28 16:52:19 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "trips"  WHERE "trips"."event_id" = $1  [["event_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "trips"."carbon" FROM "trips"  WHERE "trips"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT "trips"."km_travelled" FROM "trips"  WHERE "trips"."event_id" = $1  [["event_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "pledges"  WHERE "pledges"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered events/_background.html.haml (0.9ms)
+  Rendered events/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/2/trees/new?amount=300" for 127.0.0.1 at 2015-07-28 16:52:32 +0200
+Processing by TreesController#new as HTML
+  Parameters: {"amount"=>"300", "event_id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered events/_background.html.haml (0.8ms)
+  Rendered trees/new.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/2/trees/new?amount=300" for 127.0.0.1 at 2015-07-28 16:57:07 +0200
+Processing by TreesController#new as HTML
+  Parameters: {"amount"=>"300", "event_id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered events/_background.html.haml (1.0ms)
+  Rendered trees/new.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/2/trees" for 127.0.0.1 at 2015-07-28 16:57:08 +0200
+Processing by TreesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "tree"=>{"rand_given"=>"300"}, "commit"=>"Join the Treevolution now!", "event_id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "trees" ("created_at", "event_id", "rand_given", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-07-28 14:57:08.369121"], ["event_id", 2], ["rand_given", 300], ["updated_at", "2015-07-28 14:57:08.369121"], ["user_id", 2]]
+  [1m[36m (8.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 14ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2015-07-28 16:57:08 +0200
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "trips"  WHERE "trips"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT "trips"."carbon" FROM "trips"  WHERE "trips"."event_id" = $1  [["event_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "trips"."km_travelled" FROM "trips"  WHERE "trips"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "pledges"  WHERE "pledges"."event_id" = $1  [["event_id", 2]]
+  Rendered events/_background.html.haml (0.8ms)
+  Rendered events/show.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/events/2/users/new" for 127.0.0.1 at 2015-07-28 16:57:13 +0200
+Processing by UsersController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered events/_background.html.haml (0.8ms)
+  Rendered users/new.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/2/users/new" for 127.0.0.1 at 2015-07-28 16:57:33 +0200
+Processing by UsersController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered events/_background.html.haml (0.9ms)
+  Rendered users/new.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/events/2/users" for 127.0.0.1 at 2015-07-28 16:58:03 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "user"=>{"name"=>"j", "surname"=>"o", "email"=>"jo@me.com"}, "commit"=>"Get Started ➢", "event_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'jo@me.com' LIMIT 1[0m
+Redirected to http://localhost:3000/events/2/trips/new
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/events/2/trips/new" for 127.0.0.1 at 2015-07-28 16:58:03 +0200
+Processing by TripsController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered events/_background.html.haml (0.8ms)
+  [1m[35mCar Load (0.3ms)[0m  SELECT "cars".* FROM "cars"
+  [1m[36mFlight Load (0.3ms)[0m  [1mSELECT "flights".* FROM "flights"[0m
+  Rendered trips/new.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 36ms (Views: 31.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/events/2/trips" for 127.0.0.1 at 2015-07-28 16:59:11 +0200
+Processing by TripsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "car_km"=>"3", "car_people"=>"3", "car_id"=>"2", "bus_km"=>"", "train_km"=>"", "flight_id"=>"", "commit"=>"Go", "event_id"=>"2"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events"  WHERE "events"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "trips" ("created_at", "event_id", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-07-28 14:59:11.480002"], ["event_id", 2], ["updated_at", "2015-07-28 14:59:11.480002"], ["user_id", 2]]
+  [1m[35m (8.5ms)[0m  COMMIT
+  [1m[36mCar Load (0.5ms)[0m  [1mSELECT  "cars".* FROM "cars"  WHERE "cars"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "trips" SET "car_carbon" = $1, "updated_at" = $2 WHERE "trips"."id" = 32[0m  [["car_carbon", 0], ["updated_at", "2015-07-28 14:59:11.492730"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "trips" SET "carbon" = $1, "km_travelled" = $2, "updated_at" = $3 WHERE "trips"."id" = 32  [["carbon", 0], ["km_travelled", 3], ["updated_at", "2015-07-28 14:59:11.496109"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered events/_background.html.haml (0.9ms)
+  Rendered trips/create.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 46ms (Views: 24.6ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-29 09:06:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+  [1m[35m (1.4ms)[0m  SELECT "events"."name" FROM "events"
+  Rendered events/index.html.haml within layouts/application (52.7ms)
+Completed 200 OK in 407ms (Views: 399.2ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-29 09:55:08 +0200
+Processing by EventsController#index as HTML
+  [1m[36m (1.7ms)[0m  [1mSELECT "events"."name" FROM "events"[0m
+  Rendered events/index.html.haml within layouts/application (49.5ms)
+Completed 200 OK in 123ms (Views: 118.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2015-07-29 09:55:10 +0200
+Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (4.8ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  Rendered /Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/page/index.html.arb (72.1ms)
+Completed 200 OK in 162ms (Views: 79.0ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2015-07-29 09:55:12 +0200
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35m (4.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users"   ORDER BY "users"."created_at" asc LIMIT 30 OFFSET 0
+  [1m[36m (2.6ms)[0m  [1mSELECT "trips"."km_travelled" FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT "trips"."km_travelled" FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "trips"."km_travelled" FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT "trips"."km_travelled" FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 4]]
+  [1m[36mTrip Load (0.5ms)[0m  [1mSELECT "trips".* FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mTrip Load (0.8ms)[0m  SELECT "trips".* FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 2]]
+  [1m[36mTrip Load (0.4ms)[0m  [1mSELECT "trips".* FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mTrip Load (0.4ms)[0m  SELECT "trips".* FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 4]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trips"."carbon" FROM "trips"  WHERE "trips"."user_id" = $1  [["user_id", 4]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1  [["user_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1  [["user_id", 3]]
+  [1m[36m (0.4ms)[0m  [1mSELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trees"."rand_given" FROM "trees"  WHERE "trees"."user_id" = $1  [["user_id", 4]]
+  [1m[36m (0.5ms)[0m  [1mSELECT "pledges"."about" FROM "pledges"  WHERE "pledges"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT "pledges"."about" FROM "pledges"  WHERE "pledges"."user_id" = $1  [["user_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "pledges"."about" FROM "pledges"  WHERE "pledges"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT "pledges"."about" FROM "pledges"  WHERE "pledges"."user_id" = $1  [["user_id", 4]]
+  Rendered /Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/resource/index.html.arb (224.0ms)
+Completed 500 Internal Server Error in 259ms
+
+NoMethodError - undefined method `+' for nil:NilClass:
+  activesupport (4.1.1) lib/active_support/core_ext/enumerable.rb:24:in `block in sum'
+  activesupport (4.1.1) lib/active_support/core_ext/enumerable.rb:24:in `sum'
+   () Users/jessieosterman/Desktop/Greenpop/GreenUp_Revision/app/admin/user.rb:70:in `block (3 levels) in <top (required)>'
+  arbre (1.0.1) lib/arbre/element.rb:31:in `build'
+  arbre (1.0.1) lib/arbre/html/tag.rb:15:in `build'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `div'
+   () Users/jessieosterman/Desktop/Greenpop/GreenUp_Revision/app/admin/user.rb:69:in `block (2 levels) in <top (required)>'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/index_as_table.rb:199:in `block in build'
+  arbre (1.0.1) lib/arbre/element.rb:31:in `build'
+  arbre (1.0.1) lib/arbre/html/tag.rb:15:in `build'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/components/table_for.rb:18:in `build'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/index_as_table.rb:204:in `table_for'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/index_as_table.rb:197:in `build'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/index.rb:137:in `block (2 levels) in render_index'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `div'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/index.rb:136:in `block in render_index'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `paginated_collection'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/index.rb:131:in `render_index'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/index.rb:50:in `build_collection'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/index.rb:28:in `block in main_content'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `batch_action_form'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/index.rb:36:in `wrap_with_batch_action_form'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/index.rb:26:in `main_content'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:83:in `block (2 levels) in build_main_content_wrapper'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `div'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:82:in `block in build_main_content_wrapper'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `div'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:81:in `build_main_content_wrapper'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:65:in `block in build_page_content'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `div'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:64:in `build_page_content'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:47:in `block (2 levels) in build_page'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:14:in `div'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:44:in `block in build_page'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:43:in `build_page'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/views/pages/base.rb:10:in `build'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+  arbre (1.0.1) lib/arbre/context.rb:92:in `with_current_arbre_element'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+  arbre (1.0.1) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/resource/index.html.arb:1:in `block in ___sers_jessieosterman__rvm_gems_ruby_______bundler_gems_active_admin__cfc_____e_a_app_views_active_admin_resource_index_html_arb___4484638116825222381_70333001709920'
+  arbre (1.0.1) lib/arbre/context.rb:45:in `initialize'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/resource/index.html.arb:1:in `___sers_jessieosterman__rvm_gems_ruby_______bundler_gems_active_admin__cfc_____e_a_app_views_active_admin_resource_index_html_arb___4484638116825222381_70333001709920'
+  actionview (4.1.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.1) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.1) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+   () Users/jessieosterman/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.1) lib/action_controller/metal/responder.rb:238:in `default_render'
+  actionpack (4.1.1) lib/action_controller/metal/responder.rb:165:in `to_html'
+  responders (1.0.0) lib/responders/flash_responder.rb:104:in `to_html'
+  actionpack (4.1.1) lib/action_controller/metal/responder.rb:158:in `respond'
+  actionpack (4.1.1) lib/action_controller/metal/responder.rb:151:in `call'
+  actionpack (4.1.1) lib/action_controller/metal/mime_responds.rb:400:in `respond_with'
+  inherited_resources (1.4.1) lib/inherited_resources/actions.rb:7:in `index'
+   () Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/lib/active_admin/resource_controller/streaming.rb:12:in `index'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.0.3) lib/quiet_assets.rb:23:in `call_with_quiet_assets'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  puma (2.9.0) lib/puma/server.rb:490:in `handle_request'
+  puma (2.9.0) lib/puma/server.rb:361:in `process_client'
+  puma (2.9.0) lib/puma/server.rb:254:in `block in run'
+  puma (2.9.0) lib/puma/thread_pool.rb:92:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/3e40a429a1140017/variables" for 127.0.0.1 at 2015-07-29 09:55:12 +0200
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"   ORDER BY "users"."created_at" asc[0m
+  [1m[36m (15.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (5.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20140711200922)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (18.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255), "name" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140711200922"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTrips (20140711200930)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "trips" ("id" serial primary key, "user_id" integer, "event_id" integer, "carbon" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140711200930"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTrees (20140711200943)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (6.8ms)[0m  [1mCREATE TABLE "trees" ("id" serial primary key, "user_id" integer, "rand_given" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140711200943"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePledges (20140711201002)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "pledges" ("id" serial primary key, "about" text, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140711201002"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateEvents (20140711203151)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (7.7ms)[0m  [1mCREATE TABLE "events" ("id" serial primary key, "name" character varying(255), "about" text, "start_date" date, "end_date" date, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140711203151"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateAdminUsers (20140716215812)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (13.2ms)[0m  [1mCREATE TABLE "admin_users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  [1m[35mAdminUser Exists (2.6ms)[0m  SELECT  1 AS one FROM "admin_users"  WHERE "admin_users"."email" = 'admin@example.com' LIMIT 1
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "admin_users" ("created_at", "email", "encrypted_password", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-07-29 08:00:18.034618"], ["email", "admin@example.com"], ["encrypted_password", "$2a$10$AJ.9DHOIEeMrE6limi178.HWAkyAIFxM4p1nxif2wB3yMkjI4Mlr2"], ["updated_at", "2015-07-29 08:00:18.034618"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140716215812"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateActiveAdminComments (20140716215814)
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36m (12.1ms)[0m  [1mCREATE TABLE "active_admin_comments" ("id" serial primary key, "namespace" character varying(255), "body" text, "resource_id" character varying(255) NOT NULL, "resource_type" character varying(255) NOT NULL, "author_id" integer, "author_type" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.8ms)[0m  CREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")
+  [1m[36m (2.5ms)[0m  [1mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  [1m[35m (4.1ms)[0m  CREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140716215814"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to AddEventIdToPledgeAndTree (20140717230418)
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "trips" ADD COLUMN "km_travelled" integer
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "trees" ADD COLUMN "event_id" integer[0m
+  [1m[35m (1.1ms)[0m  ALTER TABLE "pledges" ADD COLUMN "event_id" integer
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140717230418"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to AddBackgroundToEvents (20140804124232)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "events" ADD COLUMN "background_file_name" character varying(255)
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "events" ADD COLUMN "background_content_type" character varying(255)[0m
+  [1m[35m (0.7ms)[0m  ALTER TABLE "events" ADD COLUMN "background_file_size" integer
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "events" ADD COLUMN "background_updated_at" timestamp[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140804124232"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFlights (20140806110611)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "flights" ("id" serial primary key, "origin" character varying(255), "distance" integer, "carbon_per_km" float) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140806110611"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCars (20140806115837)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "cars" ("id" serial primary key, "size" character varying(255), "carbon_per_km" float) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140806115837"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVariables (20140811134412)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "variables" ("id" serial primary key, "name" character varying(255), "value" float) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140811134412"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddEventRefToUsers (20150716082513)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "event_id" integer[0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX  "index_users_on_event_id" ON "users"  ("event_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150716082513"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddCarCarbonToTrips (20150720075645)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "trips" ADD COLUMN "car_carbon" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150720075645"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddFlightCarbonToTrips (20150720085550)
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "trips" ADD COLUMN "flight_carbon" integer
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150720085550"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to AddBusCarbonAndTrainCarbonToTrips (20150720090258)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "trips" ADD COLUMN "bus_carbon" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "trips" ADD COLUMN "train_carbon" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150720090258"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddSurnameToUsers (20150720134518)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "users" ADD COLUMN "surname" character varying(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150720134518"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mFlight Load (1.4ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'South Africa'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.192], ["distance", 1000], ["origin", "South Africa"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.3ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'Southern Africa'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.192], ["distance", 4000], ["origin", "Southern Africa"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.5ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'Northern Africa'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 8000], ["origin", "Northern Africa"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.4ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'Europe'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 10000], ["origin", "Europe"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.4ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'Australia'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 11000], ["origin", "Australia"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.3ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'Middle East'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 8000], ["origin", "Middle East"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.3ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'Far East'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 13000], ["origin", "Far East"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.3ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'North America (East Coast)'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 12500], ["origin", "North America (East Coast)"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.5ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'North America (West Coast)'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 16000], ["origin", "North America (West Coast)"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mFlight Load (0.4ms)[0m  SELECT  "flights".* FROM "flights"  WHERE "flights"."origin" = 'South America'  ORDER BY "flights"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "flights" ("carbon_per_km", "distance", "origin") VALUES ($1, $2, $3) RETURNING "id"  [["carbon_per_km", 0.226], ["distance", 8000], ["origin", "South America"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mCar Load (0.5ms)[0m  SELECT  "cars".* FROM "cars"  WHERE "cars"."size" = 'Small'  ORDER BY "cars"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cars" ("carbon_per_km", "size") VALUES ($1, $2) RETURNING "id"  [["carbon_per_km", 0.4], ["size", "Small"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mCar Load (0.3ms)[0m  SELECT  "cars".* FROM "cars"  WHERE "cars"."size" = 'Medium'  ORDER BY "cars"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cars" ("carbon_per_km", "size") VALUES ($1, $2) RETURNING "id"  [["carbon_per_km", 0.5], ["size", "Medium"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mCar Load (0.4ms)[0m  SELECT  "cars".* FROM "cars"  WHERE "cars"."size" = 'Large'  ORDER BY "cars"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cars" ("carbon_per_km", "size") VALUES ($1, $2) RETURNING "id"  [["carbon_per_km", 0.6], ["size", "Large"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mVariable Load (0.5ms)[0m  SELECT  "variables".* FROM "variables"  WHERE "variables"."name" = 'train_carbon_per_km'  ORDER BY "variables"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "variables" ("name", "value") VALUES ($1, $2) RETURNING "id"  [["name", "train_carbon_per_km"], ["value", 0.047]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mVariable Load (0.5ms)[0m  SELECT  "variables".* FROM "variables"  WHERE "variables"."name" = 'bus_carbon_per_km'  ORDER BY "variables"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "variables" ("name", "value") VALUES ($1, $2) RETURNING "id"  [["name", "bus_carbon_per_km"], ["value", 0.109]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2015-07-29 10:00:40 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::UsersController#index as HTML
+  [1m[35mAdminUser Load (1.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+Completed 401 Unauthorized in 36ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2015-07-29 10:00:40 +0200
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendered /Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/devise/shared/_links.erb (1.9ms)
+  Rendered /Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (91.8ms)
+Completed 200 OK in 379ms (Views: 375.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2015-07-29 10:00:52 +0200
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RgRlKHNCQ+cksRxpA/lgW6bQ6syxzER23Vp0DV2j0eY=", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[35mAdminUser Load (1.7ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."email" = 'admin@example.com'  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "admin_users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "admin_users"."id" = 1  [["remember_created_at", "2015-07-29 08:00:53.089732"], ["updated_at", "2015-07-29 08:00:53.090518"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "admin_users" SET "current_sign_in_at" = $1, "current_sign_in_ip" = $2, "last_sign_in_at" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "admin_users"."id" = 1[0m  [["current_sign_in_at", "2015-07-29 08:00:53.101393"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-07-29 08:00:53.101393"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-07-29 08:00:53.103249"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/admin/users
+Completed 302 Found in 147ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2015-07-29 10:00:53 +0200
+Processing by Admin::UsersController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35m (2.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mTrip Load (1.6ms)[0m  [1mSELECT "trips".* FROM "trips"[0m
+  [1m[35mTree Load (1.0ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mPledge Load (1.0ms)[0m  [1mSELECT "pledges".* FROM "pledges"[0m
+  Rendered /Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/resource/index.html.arb (136.3ms)
+Completed 200 OK in 165ms (Views: 136.2ms | ActiveRecord: 17.1ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2015-07-29 10:00:55 +0200
+Processing by Admin::UsersController#index as HTML
+  [1m[35mAdminUser Load (1.2ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mTrip Load (0.3ms)[0m  SELECT "trips".* FROM "trips"
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mPledge Load (0.3ms)[0m  SELECT "pledges".* FROM "pledges"
+  Rendered /Users/jessieosterman/.rvm/gems/ruby-2.2.1/bundler/gems/active_admin-9cfc45330e5a/app/views/active_admin/resource/index.html.arb (70.4ms)
+Completed 200 OK in 87ms (Views: 80.8ms | ActiveRecord: 2.7ms)
