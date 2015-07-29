@@ -3,7 +3,7 @@
 	%h1.green It's a Treevolution, help us plant!
 	
 	= form_for @tree, url: event_trees_path(@event) do |f|
-		%p.white 
+		%p.white.donate 
 			I'll donate R
 			= f.number_field :rand_given, class: "donate_money inline", value: params[:amount] 
 			towards tree planting in southern Africa

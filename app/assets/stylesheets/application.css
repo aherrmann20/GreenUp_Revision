@@ -44,7 +44,7 @@
 
 h1 {
 	font-family: 'Rockwell', serif;
-	font-size: 40px;
+	font-size: 44px;
 	margin: 0;
 }
 
@@ -52,6 +52,9 @@ p {
   font-size: 16px;
   margin: 0;
 	padding: 10px;
+}
+p.white.donate {
+  padding: 10px;
 }
 
 a {
@@ -61,6 +64,7 @@ a {
 ul {
     padding: 0;
     list-style-type: none;
+    font-size: 20px;
 }
 
 #money-amount {
@@ -113,7 +117,8 @@ textarea {
   }
 
   &:hover {
-    background-color: #eee;
+    color: #375C12;
+    background-color: #F5FFEB;
     transition: 0.3;
   }
 }
@@ -121,6 +126,7 @@ textarea {
 .button {
 	font-family: 'Rockwell', serif;
 	font-size: 25px;
+  font-weight: 800;
 	cursor: pointer;
 	border: thin solid black;
 	text-decoration:none;
@@ -140,7 +146,7 @@ textarea {
   }
 
   &:hover {
-    background-color: #eee;
+    background-color: #F5FFEB;
     transition: 0.3;
   }
 }
