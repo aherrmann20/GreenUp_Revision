@@ -15,6 +15,8 @@ ActiveAdmin.register User do
   #  permitted
   # end
 
+  index do
+
   total_carbon = []
   total_donation = []
   total_car_carbon = []
@@ -22,7 +24,6 @@ ActiveAdmin.register User do
   total_bus_carbon = []
   total_train_carbon = []
 
-  index do
     column "Signed Up", sortable: :created_at do |u|
       u.created_at.strftime("%B %e, %Y, %H:%M")
     end
@@ -80,6 +81,14 @@ ActiveAdmin.register User do
   # end
 
   csv do
+
+  total_carbon = []
+  total_donation = []
+  total_car_carbon = []
+  total_flight_carbon = []
+  total_bus_carbon = []
+  total_train_carbon = []
+
     column :name
     column :surname
     column :email

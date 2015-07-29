@@ -188,6 +188,19 @@ h2.start{
   z-index: 99;
 }
 
+.begin{
+  position: relative;
+  display: inline;
+  color: #fff;
+  background-color: #003300;
+  border-radius: 0.3em;
+  padding: 0.2em;
+  margin-top: 1em;
+  text-align: right;
+  font-weight: 800;
+  z-index: 99;
+}
+
 /* unvisited link */
 a:link {
     color: #FFF;

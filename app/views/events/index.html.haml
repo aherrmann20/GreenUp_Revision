@@ -12,11 +12,18 @@
 
         %li= text_field_tag("event_search", params[:event_search], :placeholder =>"Search for your event...")
 
-  
+      / -if Event.find(params[:event][:id])?
+      / -selected_event = Event.find(params[:event][:id])
 
     %ul
       - if false
         %h2 hello
+
+    / %ul
+    / .begin
+    /   -if @events.try(:any?)
+    /     - @events.each do |event| 
+    /       = link_to("Get Started \u2192", new_event_user_path(event), :class => "glyphicon glyphicon-chevron-right")
 
     %ul
       - if @events.try(:any?)
