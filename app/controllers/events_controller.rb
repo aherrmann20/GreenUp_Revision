@@ -4,6 +4,8 @@ class EventsController < ApplicationController
     if params[:event_search].present?
       q = "%#{params[:event_search]}%"
       @events = Event.where("name iLIKE ?", q).last(10)
+      @events_all = Event.all
+      # @selected_event = Event.find(params[:event][:id])
     end
   end
 
