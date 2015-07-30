@@ -1,6 +1,9 @@
 ActiveAdmin.register User do
   config.sort_order = 'created_at_asc'
 
+  filter :trips
+  filter :email
+  filter :event
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,11 +17,11 @@ ActiveAdmin.register User do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-
-  index do
-
   total_carbon = []
   total_donation = []
+  
+  index do
+
   total_car_carbon = []
   total_flight_carbon = []
   total_bus_carbon = []
@@ -81,9 +84,6 @@ ActiveAdmin.register User do
   # end
 
   csv do
-
-  total_carbon = []
-  total_donation = []
   total_car_carbon = []
   total_flight_carbon = []
   total_bus_carbon = []
