@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   def index
     # @events = Event.all
-    if params[:event_search].present?
-      q = "%#{params[:event_search]}%"
-      @events = Event.where("name iLIKE ?", q).last(10)
+    if params[:event].present?
+      q = params[:event][:name].to_i
+      @events = Event.where(id: q)
       @events_all = Event.all
       # @selected_event = Event.find(params[:event][:id])
     end
