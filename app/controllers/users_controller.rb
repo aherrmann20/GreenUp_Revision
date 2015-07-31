@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
       @event = Event.find(params[:event_id])
-      @user = User.new
+      @user = User.new(params[:user], params[:event_id])
   end
 
   def create

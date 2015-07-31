@@ -163,6 +163,7 @@ h1.white{
 }
 
 p.white{
+  color: white;
   font-family: "Rockwell";
   padding:0;
   text-shadow: 2px 2px 6px #000000;
