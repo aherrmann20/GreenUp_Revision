@@ -2,9 +2,13 @@ ActiveAdmin.register User do
   config.sort_order = 'created_at_asc'
 
   filter :name_or_surname_cont, label: 'Name / Surname'
-  filter :trips
   filter :email
-  filter :event
+  filter :event, as: :select, collection: proc {User.all do |user|
+      user.trips[0].event.name
+    end
+  }
+
+  # filter :author, as: :check_boxes, collection: proc { Author.all }
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -38,7 +42,9 @@ ActiveAdmin.register User do
     column "Distance Travelled (km)" do |user|
       user.total(:km_travelled)
     end
-
+    column "Event" do |user|
+      user.trips[0].event.name
+    end
     column "Car CO" do |user|
       total_car_carbon << user.trips[0][:car_carbon]
       user.trips[0][:car_carbon]
@@ -68,6 +74,8 @@ ActiveAdmin.register User do
       user.pledges_summary
     end
 
+
+
     div :class => "Row" do |user|
       "Total Carbon Generated: " + total_carbon.sum.to_s + " kg"
     end
@@ -96,6 +104,10 @@ ActiveAdmin.register User do
     column :email
     column "Distance Travelled (km)" do |user|
       user.total(:km_travelled)
+    end
+
+    column "Event" do |user|
+      user.trips[0].event.name
     end
 
     column "Car CO" do |user|
