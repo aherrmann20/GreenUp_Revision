@@ -135,12 +135,13 @@ body {
   display: block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 8%;
+  width: 9%;
   right: 0;
   top: 45%;
   margin-top: 1em;
   margin-right: 1.5em;
-  margin-left: 1.5em;
+  margin-left: .5em;
+  margin-bottom: 1em;
   z-index: 9999;
 }
 
@@ -171,9 +172,9 @@ p.white{
 	margin: 0;
 }
 
-input#event_search{
+/*input#event_search{
 	font-size:28px;
-}
+}*/
 
 h2.start{
   position: relative;
@@ -199,20 +200,5 @@ h2.start{
   text-align: right;
   font-weight: 800;
   z-index: 99;
-}
-
-/* unvisited link */
-a:link {
-    color: #FFF;
-}
-
-/* visited link */
-a:visited {
-    color: #E6E6E6;
-}
-
-/* mouse over link */
-a:hover {
-    color: #375C12;
 }
 
