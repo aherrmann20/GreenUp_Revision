@@ -3,12 +3,7 @@ ActiveAdmin.register User do
 
   filter :name_or_surname_cont, label: 'Name / Surname'
   filter :email
-  filter :event, as: :select, collection: proc {User.all do |user|
-      user.trips[0].event.name
-    end
-  }
-
-  # filter :author, as: :check_boxes, collection: proc { Author.all }
+  filter :event
   
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
