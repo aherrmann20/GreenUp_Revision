@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :events do 
+    collection do
+      match 'search' => "event#search", via: [:get, :post], as: :search
+    end
     resources :users, only: [:new, :create]
     resources :trips, only: [:new, :create]
     resources :trees, only: [:new, :create]

@@ -1,6 +1,7 @@
 ActiveAdmin.register User do
   config.sort_order = 'created_at_asc'
 
+  filter :name_or_surname_cont, label: 'Name / Surname'
   filter :trips
   filter :email
   filter :event
@@ -17,11 +18,12 @@ ActiveAdmin.register User do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  total_carbon = []
-  total_donation = []
+
   
   index do
 
+  total_carbon = []
+  total_donation = []
   total_car_carbon = []
   total_flight_carbon = []
   total_bus_carbon = []
