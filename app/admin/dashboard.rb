@@ -4,6 +4,7 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
     link_to "To User List", :admin_users
+    link_to "To Home Page", events_path
   end # content
       
   

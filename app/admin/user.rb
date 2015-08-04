@@ -37,7 +37,7 @@ ActiveAdmin.register User do
     column "Distance Travelled (km)" do |user|
       user.total(:km_travelled)
     end
-    column "Event" do |user|
+    column "Event", :sortable do |user|
       user.trips[0].event.name
     end
     column "Car CO" do |user|
@@ -89,6 +89,8 @@ ActiveAdmin.register User do
   # end
 
   csv do
+  total_carbon = []
+  total_donation = []
   total_car_carbon = []
   total_flight_carbon = []
   total_bus_carbon = []
