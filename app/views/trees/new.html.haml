@@ -8,4 +8,8 @@
 			= f.number_field :rand_given, class: "donate_money inline", value: params[:amount] 
 			towards tree planting in southern Africa
 		= f.submit("Join the Treevolution now!", class: "button")
+		%p.white.donate
+			Donate through Snapscan
+			%br
+			= image_tag "snapscanQR.png", class: "snapscan", align: "center"
 
