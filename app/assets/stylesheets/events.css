@@ -7,7 +7,7 @@ body {
 #email_input_response {
 	margin-top: 12px;
   padding: 0.1em;
-  font-family: "Helvetica Neue Light", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 
@@ -153,7 +153,7 @@ body {
     -1px 1px 0 #fff,
     1px 1px 0 #fff; 
     font-size: 400%;
-    font-weight: 800;
+    font-weight: 1000;
 /*    margin-top: 2em;*/
 }
 
@@ -164,7 +164,7 @@ h1.white{
 
 p.white{
   color: white;
-  font-family: "Rockwell";
+  font-family: "Kameron";
   padding:0;
   text-shadow: 2px 2px 6px #000000;
 }
