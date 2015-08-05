@@ -27,19 +27,9 @@
 
 .lightgrey{color:#C9CCCB;}
 
-@font-face{ 
-  font-family: Helvetica; 
-  src: url('/assets/HelveticaNeue-Light.otf');
-}
-
-@font-face{
-  font-family: Rockwell;
-  src: url('assets/RockwellStd.otf');
-}
-
 /*all text*/
 * {
-	font-family: 'Helvetica Neue Light', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 /*white overlay on all pages*/
@@ -52,7 +42,7 @@
 }
 
 h1 {
-	font-family: 'Rockwell', serif;
+	font-family: 'Kameron', serif;
 	font-size: 44px;
 	margin: 0;
 }
@@ -132,7 +122,7 @@ textarea {
 }
 
 .btn-link {
-  font-family: 'Rockwell', serif;
+  font-family: 'Kameron', serif;
   font-size: 32px;
   font-weight: 800;
   cursor: pointer;
@@ -161,7 +151,7 @@ textarea {
 }
 
 .button {
-	font-family: 'Rockwell', serif;
+	font-family: 'Kameron', serif;
 	font-size: 32px;
   font-weight: 800;
 	cursor: pointer;
