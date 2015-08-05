@@ -6,8 +6,19 @@ class PledgesController < ApplicationController
   end
 
   def create
+    @user = User.find_by(email: user_params[:email])
   	@pledge = Pledge.create(pledge_params.merge({user_id: session[:user_id], event_id: @event.id}))
-    redirect_to @event, notice: "An email is waiting in your inbox thanking you for your pledge. You're tree-mendous!"
+    
+    respond_to do |format|
+      if @pledge.save
+        PledgeMailer.sample_email(@user).deliver_now
+
+        redirect_to @event, notice: "An email is waiting in your inbox thanking you for your pledge. You're tree-mendous!" 
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @pledge.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private
