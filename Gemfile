@@ -43,10 +43,6 @@ gem 'paperclip', "~> 4.1"
 
 gem 'puma'
 
-gem 'fonts-rails'
-gem 'webfontloader'
-gem 'font-awesome-sass-rails'
-
 gem 'rails_12factor', group: :production
 
 gem 'better_errors'
