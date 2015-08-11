@@ -6,9 +6,12 @@ class PledgesController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: user_params[:email])
   	@pledge = Pledge.create(pledge_params.merge({user_id: session[:user_id], event_id: @event.id}))
-    end
+    @user = User.find(@pledge.user_id)
+
+    UserMailer.pledge_email(@user, @pledge, @event).deliver
+
+    redirect_to @event, notice: "Thank you for your pledge. You're tree-mendous!"
   end
 
   private

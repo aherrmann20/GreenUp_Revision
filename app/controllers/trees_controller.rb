@@ -7,6 +7,12 @@ class TreesController < ApplicationController
 
   def create
     @tree = Tree.create(tree_params.merge({user_id: session[:user_id], event_id: @event.id}))
+    
+    @user = User.find(@tree.user_id)
+    @event = Event.find(@tree.event_id)
+
+    UserMailer.tree_email(@user, @tree, @event).deliver
+
     redirect_to @event, notice: "Thank you for your contribution. You're tree-mendous!"
   end
 
